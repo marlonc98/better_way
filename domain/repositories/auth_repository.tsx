@@ -6,3 +6,5 @@ export default interface AuthRepository {
     logout: () => Promise<void>;
     getCurrentUser: () => Promise<WaiterEntity<UserEntity>>;
 }
+
+export const AuthRepositoryName = "AuthRepository";

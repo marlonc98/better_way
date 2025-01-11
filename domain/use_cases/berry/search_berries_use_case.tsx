@@ -21,3 +21,5 @@ export default class SearchBerriesUseCase {
         return await this.berryRepository.searchBerries(params);
     }
 }
+
+export const SearchBerriesUseCaseName = "SearchBerriesUseCase";

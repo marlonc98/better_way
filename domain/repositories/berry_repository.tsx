@@ -5,3 +5,5 @@ import WaiterEntity from "../entities/waiter_entity";
 export default interface BerryRepository {
     searchBerries: (params: { page: number; itemsPerPage: number; }) => Promise<WaiterEntity<PaginatedEntity<BerryEntity>>>;
 }
+
+export const BerryRepositoryName = "BerryRepositoryName";

@@ -9,7 +9,7 @@ interface _Props {
 }
 
 @injectable()
-export default class SearchBerriesUseCase {
+export default class SearchPokemonsUseCase {
     private pokemonRepository: PokemonRepository
     constructor(private props: _Props) {
         this.pokemonRepository = props.pokemonRepository;
@@ -21,3 +21,5 @@ export default class SearchBerriesUseCase {
         return await this.pokemonRepository.searchPokemons(params);
     }
 }
+
+export const SearchPokemonsUseCaseName = "SearchPokemonsUseCase";
