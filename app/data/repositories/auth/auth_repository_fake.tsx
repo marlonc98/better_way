@@ -17,6 +17,7 @@ const userOnlyPokemon: CredentialFake = {
     user: {
         id: 1,
         name: "Ash Ketchum",
+        imageUrl: "https://i.pinimg.com/474x/54/70/27/547027779dff9d7af85ea008a9bc8194.jpg",
         permissions: {
             berries: false,
             pokemons: true,
@@ -29,6 +30,7 @@ const adminUser: CredentialFake = {
     user: {
         id: 2,
         name: "Professor Oak",
+        imageUrl: "https://www.mundodeportivo.com/alfabeta/hero/2024/08/estos-son-los-profesores-que-aparecen-en-pokemon.jpg",
         permissions: {
             berries: true,
             pokemons: true,

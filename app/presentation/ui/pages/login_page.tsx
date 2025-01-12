@@ -1,10 +1,10 @@
 import di from '@/app/dependency_injection';
 import { WaiterStatus } from '@/app/domain/entities/waiter_entity';
 import LoginWithUserAndPasswordUseCase, { LoginWithUserAndPasswordUseCaseName } from '@/app/domain/use_cases/auth/login_with_user_and_password_use_case';
-import { useNavigation } from 'expo-router';
 import React, { useState } from 'react';
 import { Text, View, TextInput, Button, StyleSheet, Image, ScrollView } from 'react-native';
 import routeList from '../../routes/route_list';
+import { useNavigation } from '@react-navigation/native';
 
 const LoginPage = () => {
     const [email, setEmail] = useState('');

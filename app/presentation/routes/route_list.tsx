@@ -2,6 +2,8 @@ import UserEntity from "@/app/domain/entities/user_entity";
 import LoadPage from "../ui/pages/load_page";
 import PokemonPage from "../ui/pages/pokemon_page";
 import LoginPage from "../ui/pages/login_page";
+import Layout from "../ui/pages/layout";
+import BerryPage from "../ui/pages/berry_page";
 
 const routeList = {
     load: {
@@ -9,36 +11,43 @@ const routeList = {
         title: undefined,
         component: LoadPage,
         pathTo: (): string => `/`,
-        auth: (user: UserEntity | undefined) => true,
+        auth: (user: UserEntity | undefined | null) => true,
+    },
+    layout: {
+        relativePath: "/logged",
+        title: undefined,
+        component: Layout,
+        pathTo: (): string => `/logged`,
+        auth: (user: UserEntity | undefined | null) => true,
     },
     pokemons: {
         relativePath: "/pokemons",
         title: "Pokemons",
         component: PokemonPage,
         pathTo: (): string => `/pokemons`,
-        auth: (user: UserEntity | undefined) => user?.permissions.pokemons,
+        auth: (user: UserEntity | undefined | null) => user?.permissions.pokemons,
     },
-    // berries: {
-    //     path: "/berries",
-    //     relativePath: "/berries",
-    //     component: <div>berries</div>,
-    //     pathTo: (): string => `/berries`,
-    //     auth: (user: UserEntity | undefined) => user?.permissions.berries,
-    // },
+    berries: {
+        relativePath: "/berries",
+        title: "Berries",
+        component: BerryPage,
+        pathTo: (): string => `/berries`,
+        auth: (user: UserEntity | undefined | null) => user?.permissions.berries,
+    },
     login: {
         relativePath: "/login",
         title: "Login",
         component: LoginPage,
         pathTo: (): string => `/login`,
-        auth: (user: UserEntity | undefined) => !user,
+        auth: (user: UserEntity | undefined | null) => !user,
     },
-    // settings: {
-    //     path: "/settings",
-    //     relativePath: "/settings",
-    //     component: <div>settings</div>,
-    //     pathTo: (): string => `/settings`,
-    //     auth: (user: UserEntity | undefined) => true,
-    // }
+    settings: {
+        relativePath: "/settings",
+        title: "Settings",
+        component: LoadPage,
+        pathTo: (): string => `/settings`,
+        auth: (user: UserEntity | undefined) => true,
+    }
 };
 
 export default routeList;

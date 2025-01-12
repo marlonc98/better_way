@@ -11,7 +11,10 @@ const _Actions: UserContextType = defaultUserContext;
 const _Provider = ({ children }: ProviderProps) => {
   const [user, setUser] = useState<UserEntity | undefined>(undefined);
   _Actions.user = user;
-  _Actions.setUser = setUser;
+  _Actions.setUser = (user: UserEntity | undefined) =>{
+    console.log("UserProviderImpl setUser", user);
+    setUser(user);
+  }
   return (
     <UserContext.Provider value={{ user, setUser }}>
       {children}

@@ -20,7 +20,9 @@ export default class GetCurrentUseCase {
 
     call = async (): Promise<WaiterEntity<UserEntity>> => {
         const response = await this.authRepository.getCurrentUser();
+        console.log("GetCurrentUseCase", response);
         this.userProvider.Actions.setUser(response.data);
+        console.log("GetCurrentUseCase provider", this.userProvider.Actions.user);
         return response;
     }
 }

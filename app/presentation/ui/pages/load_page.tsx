@@ -42,20 +42,6 @@ const LoadPage = () => {
         transform: [{ translateX: shakeAnimation }],
     };
 
-    const _load = async () => {
-        const response = await di.get<GetCurrentUseCase>(GetCurrentUseCaseName).call();
-        if(response.data != null) {
-            navigation.navigate(routeList.pokemons.relativePath as never);
-        }
-        else {
-            navigation.navigate(routeList.login.relativePath as never);
-        }
-    }
-
-    useEffect(() => {
-        _load();
-    }, []);
-
     return (
         <View style={styles.container}>
             <Animated.Image

@@ -1,4 +1,4 @@
-import UserEntity from "../../entities/UserEntity";
+import UserEntity from "../../entities/user_entity";
 
 type UserContextType = {
   user: UserEntity | undefined;
