@@ -3,6 +3,7 @@ import LoadPage from "../ui/pages/load_page";
 import PokemonPage from "../ui/pages/pokemon_page";
 import LoginPage from "../ui/pages/login_page";
 import BerryPage from "../ui/pages/berry_page";
+import SettingsPage from "../ui/pages/settings_page";
 
 const routeList = {
     load: {
@@ -36,7 +37,7 @@ const routeList = {
     settings: {
         relativePath: "/settings",
         title: "Settings",
-        component: LoadPage,
+        component: SettingsPage,
         pathTo: (): string => `/settings`,
         auth: (user: UserEntity | undefined) => true,
     }

@@ -59,8 +59,9 @@ const PaginatedList = <T,>({ render, fetchData, itemsPerPage = 10 }: PaginatedLi
     return (
         <View style={styles.screen}>
             <View style={styles.body}>
-                {data.data && data.data.items.length > 0 && (
+                {data.data?.items && data.data.items.length > 0 && (
                     <FlatList
+                        numColumns={4}
                         data={data.data.items}
                         renderItem={({ item }) => render(item)}
                         onEndReached={handleLoadData}

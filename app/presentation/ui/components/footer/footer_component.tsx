@@ -27,19 +27,26 @@ const FooterComponent: FC<FooterComponentProps> = ({ currentUrl }) => {
         {routes.filter(route => route.route.auth(user)).map(route =>
             <TouchableOpacity
                 key={route.route.relativePath}
-                style={{ ...styles.navButton}}
-                onPress={() => navigation.navigate(route.route.relativePath as never)}>
+                style={{ ...styles.navButton }}
+                onPress={() => navigation.reset({
+                    index: 0,
+                    routes: [{ name: route.route.relativePath as never }],
+                })}>
                 <MaterialCommunityIcons name={route.icon} size={30} color={currentUrl === route.route.relativePath ? 'red' : 'gray'} />
                 <Text style={{ ...styles.navLabel, color: currentUrl === route.route.relativePath ? 'red' : 'gray' }}>{route.route.title}</Text>
-                </TouchableOpacity>
+            </TouchableOpacity>
         )}
 
         <TouchableOpacity
             style={styles.navButton}
-            onPress={() => console.log('Settings')}
+            onPress={() => navigation.reset({
+                index: 0,
+                routes: [{ name: routeList.settings.relativePath as never }],
+            })
+            }
         >
             <Image src={user!.imageUrl} style={{ width: 30, height: 30, borderRadius: 15 }} />
-            <Text style={{...styles.navLabel,color: currentUrl === routeList.settings.relativePath ? 'red' : 'gray' }}>Settings</Text>
+            <Text style={{ ...styles.navLabel, color: currentUrl === routeList.settings.relativePath ? 'red' : 'gray' }}>Settings</Text>
         </TouchableOpacity>
     </View>
 

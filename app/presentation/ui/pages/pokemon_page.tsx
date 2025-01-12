@@ -7,15 +7,14 @@ import CardComponent from "../components/card/card_component";
 import routeList from "../../routes/route_list";
 import FooterComponent from "../components/footer/footer_component";
 import PaginatedList from "../components/paginated_list/paginated_list_component";
-
-const fetchPokemonData = async (page: number, itemsPerPage: number) => {
-  const useCase = di.get<SearchPokemonsUseCase>(SearchPokemonsUseCaseName);
-  return useCase.call({ page, itemsPerPage });
-};
+import AppBarComponent from "../components/app_bar/app_bar_component";
 
 const PokemonPage = () => {
+  const fetchPokemonData = (page: number, itemsPerPage: number) => di.get<SearchPokemonsUseCase>(SearchPokemonsUseCaseName).call({ page, itemsPerPage });
+  
   return (
     <View style={{ flex: 1 }}>
+      <AppBarComponent title="Pokemons" />
       <PaginatedList<PokemonEntity>
         render={(item: PokemonEntity) => <CardComponent image={item.imageUrl} title={item.name} />}
         fetchData={fetchPokemonData}

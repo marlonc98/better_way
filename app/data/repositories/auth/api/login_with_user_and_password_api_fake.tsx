@@ -7,7 +7,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 const loginWithUserAndPasswordApiFake = async (params: { email: string; password: string; users: CredentialFake[], keyStorage: string }): Promise<WaiterEntity<UserEntity>> => {
     try {
         const { email, password, users, keyStorage } = params;
-        await Testing.sleeper(1000);
+        await Testing.sleeper(500);
         const user = users.find((user) => user.email === email && user.password === password);
         if (!user) {
             return {

@@ -27,7 +27,7 @@ const bulbasaur: PokemonEntity = {
 
 class PokemonRepositoryFake implements PokemonRepository {
     searchPokemons = async (params: { page: number; itemsPerPage: number; }): Promise<WaiterEntity<PaginatedEntity<PokemonEntity>>> => {
-        await Testing.sleeper(3000);
+        await Testing.sleeper(500);
         const maxPage = 3;
         if (params.page >= maxPage) {
             return {
