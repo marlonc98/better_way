@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { injectable } from 'inversify';
-import UserContext, { defaultUserContext } from '@/app/domain/state/user/UserContext';
-import UserContextType from '@/app/domain/state/user/UserContextType';
+import UserContext, { defaultUserContext } from '@/app/domain/state/user/user_context';
+import UserContextType from '@/app/domain/state/user/user_context_type';
 import UserEntity from '@/app/domain/entities/user_entity';
-import ProviderProps from '@/app/domain/state/ProviderProps';
-import UserProvider from '@/app/domain/state/user/UserProvider';
+import ProviderProps from '@/app/domain/state/provider_props';
+import UserProvider from '@/app/domain/state/user/user_provider';
 
 const _Actions: UserContextType = defaultUserContext;
 

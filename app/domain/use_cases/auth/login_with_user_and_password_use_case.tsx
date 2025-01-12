@@ -1,7 +1,7 @@
 import UserEntity from "@/app/domain/entities/user_entity";
 import WaiterEntity, { WaiterStatus } from "@/app/domain/entities/waiter_entity";
 import AuthRepository from "@/app/domain/repositories/auth_repository";
-import UserProvider from "@/app/domain/state/user/UserProvider";
+import UserProvider from "@/app/domain/state/user/user_provider";
 import { injectable } from "inversify";
 
 interface _Props {

@@ -11,8 +11,8 @@ import PokemonRepositoryFake from "./data/repositories/pokemon/pokemon_repositor
 import PokemonRepositoryDev from "./data/repositories/pokemon/pokemon_repository_dev";
 import PokemonRepositoryImpl from "./data/repositories/pokemon/pokemon_repository_impl";
 import GetCurrentUseCase, { GetCurrentUseCaseName } from "./domain/use_cases/auth/get_current_user_use_case";
-import UserProvider, { UserProviderName } from "./domain/state/user/UserProvider";
-import UserProviderImpl from "./presentation/state/user/UserProviderImpl";
+import UserProvider, { UserProviderName } from "./domain/state/user/user_provider";
+import UserProviderImpl from "./presentation/state/user/user_provider_impl";
 import LoginWithUserAndPasswordUseCase, { LoginWithUserAndPasswordUseCaseName } from "./domain/use_cases/auth/login_with_user_and_password_use_case";
 import LogoutUseCase, { LogoutUseCaseName } from "./domain/use_cases/auth/logout_use_case";
 import SearchBerriesUseCase, { SearchBerriesUseCaseName } from "./domain/use_cases/berry/search_berries_use_case";

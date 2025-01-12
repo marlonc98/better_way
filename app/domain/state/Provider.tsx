@@ -1,4 +1,4 @@
-import ProviderProps from "./ProviderProps";
+import ProviderProps from "./provider_props";
 
 export default interface Provider<T> {
     context: React.Context<T>;

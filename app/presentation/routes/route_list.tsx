@@ -2,7 +2,6 @@ import UserEntity from "@/app/domain/entities/user_entity";
 import LoadPage from "../ui/pages/load_page";
 import PokemonPage from "../ui/pages/pokemon_page";
 import LoginPage from "../ui/pages/login_page";
-import Layout from "../ui/pages/layout";
 import BerryPage from "../ui/pages/berry_page";
 
 const routeList = {
@@ -11,13 +10,6 @@ const routeList = {
         title: undefined,
         component: LoadPage,
         pathTo: (): string => `/`,
-        auth: (user: UserEntity | undefined | null) => true,
-    },
-    layout: {
-        relativePath: "/logged",
-        title: undefined,
-        component: Layout,
-        pathTo: (): string => `/logged`,
         auth: (user: UserEntity | undefined | null) => true,
     },
     pokemons: {

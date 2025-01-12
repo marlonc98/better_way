@@ -2,8 +2,8 @@ import { FC, useContext } from "react";
 import { Text, TouchableOpacity, View, StyleSheet, Image } from "react-native";
 import FooterComponentProps from "./footer_component_props";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import UserContext from "@/app/domain/state/user/UserContext";
-import UserContextType from "@/app/domain/state/user/UserContextType";
+import UserContext from "@/app/domain/state/user/user_context";
+import UserContextType from "@/app/domain/state/user/user_context_type";
 import { useNavigation } from "expo-router";
 import routeList from "@/app/presentation/routes/route_list";
 

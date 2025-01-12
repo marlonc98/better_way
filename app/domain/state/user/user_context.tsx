@@ -1,5 +1,5 @@
 import React from "react";
-import UserContextType from "./UserContextType";
+import UserContextType from "./user_context_type";
 
 export const defaultUserContext: UserContextType = {
     user: undefined,

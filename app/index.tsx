@@ -1,6 +1,6 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import di from './dependency_injection';
-import UserProvider, { UserProviderName } from './domain/state/user/UserProvider';
+import UserProvider, { UserProviderName } from './domain/state/user/user_provider';
 import routeList from './presentation/routes/route_list';
 import UserEntity from './domain/entities/user_entity';
 import GetCurrentUseCase, { GetCurrentUseCaseName } from './domain/use_cases/auth/get_current_user_use_case';
