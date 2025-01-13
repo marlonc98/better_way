@@ -8,9 +8,22 @@ Better Way is a mobile application built with React Native. It is designed to pr
 
 This project is a technical test where the requirement was to have three screens with authentication and display information according to the user. However, I took the opportunity to explore the use of Inversify for dependency injection.
 
+### Accounts
+
+This application has two users: admin and pokehunter. Everything is done using permissions instead of roles. The account "ASH KESHUN" only has access to the Pokémon list, and for the user "PROFESOR OAK," you can access berries too. The settings is another shared screen and is used to close the session.
+
+#### Account Ash Keshun
+*email*: pokehunter@mail.com  
+*password*: Pikachu123#
+
+#### Account Profesor OAK
+*email*: admin@mail.com  
+*password*: Admin123#
+
 ### Improvements to Consider
 
 - **Better Validation**: Implement a more robust validation system, such as those provided by hooks.
+- **Password Visibility**: Add an option to toggle the visibility of the password.
 - **UI Enhancements**: Improve the user interface for a better user experience.
 - **API Integration Focus**: My primary focus was on API integration and setting up a system with different environments.
 - **Environment Flavors**: Add flavors to load environments as different apps, not just as a variable to change.
@@ -21,11 +34,11 @@ Although my main expertise is in Flutter, my knowledge in React and TypeScript a
 
 ## Exports
 
-The **build** folder contains the compiled files of the latest version currently deployed on the server.
+You can download the build APK from the expo server at the following URL:
 
-You can download the code from the repository at the following URL:
+[https://expo.dev/accounts/mackiller1998/projects/better_way/builds/7465b824-2515-467c-9774-e59679963c53](https://expo.dev/accounts/mackiller1998/projects/better_way/builds/7465b824-2515-467c-9774-e59679963c53)
 
-[https://github.com/YourUsername/better_way](https://github.com/YourUsername/better_way)
+You have to open this link from a Android mobile device
 
 ## Technologies Used
 
@@ -61,7 +74,7 @@ The project is organized as follows:
 ### **assets/**
 Contains all the public files, like images, icons, etc.
 
-### **src/**
+### **app/**
 Main directory containing the app source code. It includes the following subfolders:
 
 - **app/**:  
