@@ -1,11 +1,11 @@
 import React, { FC, useEffect, useState } from "react";
-import { View, FlatList, StyleSheet, Text, Button, ActivityIndicator } from "react-native";
+import { View, FlatList, StyleSheet, Text, Button, ActivityIndicator, DimensionValue } from "react-native";
 import WaiterEntity, { WaiterStatus } from "@/app/domain/entities/waiter_entity";
 import PaginatedEntity from "@/app/domain/entities/paginated_entity";
 import Toast from "react-native-toast-message";
 import PaginatedListProps from "./paginated_list_component_props";
 
-const PaginatedList = <T,>({ render, fetchData, itemsPerPage = 10 }: PaginatedListProps<T>) => {
+const PaginatedList = <T,>({ render, fetchData, itemsPerPage = 10, numColumns = 1, }: PaginatedListProps<T>) => {
     const [data, setData] = useState<WaiterEntity<PaginatedEntity<T>>>({
         status: WaiterStatus.NOT_STARTED,
     });
@@ -18,7 +18,7 @@ const PaginatedList = <T,>({ render, fetchData, itemsPerPage = 10 }: PaginatedLi
         if (!canSearch) return;
 
         setData((prev) => ({ ...prev, status: WaiterStatus.WAITING }));
-        const response = await fetchData(data.data?.currentPage ?? 1, itemsPerPage);
+        const response = await fetchData((data.data?.currentPage ?? 0) + 1, itemsPerPage);
 
         if (response.status === WaiterStatus.ERROR) {
             Toast.show({
@@ -61,9 +61,14 @@ const PaginatedList = <T,>({ render, fetchData, itemsPerPage = 10 }: PaginatedLi
             <View style={styles.body}>
                 {data.data?.items && data.data.items.length > 0 && (
                     <FlatList
-                        numColumns={4}
+                        style={{ flex: 1, width: '100%'}}
+                        numColumns={numColumns}
                         data={data.data.items}
-                        renderItem={({ item }) => render(item)}
+                        renderItem={({ item }) => <View
+                            style={{ flex: 1 / numColumns, paddingStart: 0, paddingEnd: 0, }}
+                        >
+                            {render(item)}
+                        </View>}
                         onEndReached={handleLoadData}
                         onEndReachedThreshold={0.1}
                         ListFooterComponent={data.status === WaiterStatus.WAITING ? <Button title="Loading..." disabled /> : null}

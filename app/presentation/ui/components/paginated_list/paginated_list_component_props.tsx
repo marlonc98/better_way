@@ -5,4 +5,5 @@ export default interface PaginatedListProps<T> {
     render: (item: T) => JSX.Element;
     fetchData: (page: number, itemsPerPage: number) => Promise<WaiterEntity<PaginatedEntity<T>>>;
     itemsPerPage?: number;
+    numColumns?: number;
 }

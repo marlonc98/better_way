@@ -16,9 +16,10 @@ const BerryPage = () => {
     <View style={{ flex: 1 }}>
       <AppBarComponent title="Berries" />
       <PaginatedList<BerryEntity>
-        render={(item: BerryEntity) => <CardComponent height={100} width={"45%"} image={item.imageUrl} title={item.name} />}
+        render={(item: BerryEntity) => <CardComponent height={100} image={item.imageUrl} title={item.name} />}
         fetchData={fetchBerryData}
         itemsPerPage={10}
+        numColumns={2}
       />
       <FooterComponent currentUrl={routeList.berries.relativePath} />
     </View>

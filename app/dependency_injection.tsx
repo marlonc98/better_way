@@ -19,7 +19,7 @@ import SearchBerriesUseCase, { SearchBerriesUseCaseName } from "./domain/use_cas
 import SearchPokemonsUseCase, { SearchPokemonsUseCaseName } from "./domain/use_cases/pokemon/search_pokemons_use_case";
 
 enum MODE_DI { PRODUCTION, DEVELOPMENT, TEST, FAKE }
-let mode = MODE_DI.FAKE.toString();
+let mode = MODE_DI.DEVELOPMENT.toString();
 const di = new Container();
 
 if (mode === MODE_DI.FAKE.toString()) {

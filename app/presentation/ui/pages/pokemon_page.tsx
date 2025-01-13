@@ -16,7 +16,7 @@ const PokemonPage = () => {
     <View style={{ flex: 1 }}>
       <AppBarComponent title="Pokemons" />
       <PaginatedList<PokemonEntity>
-        render={(item: PokemonEntity) => <CardComponent image={item.imageUrl} title={item.name} />}
+        render={(item: PokemonEntity) => <CardComponent image={item.imageUrl} title={item.name} description={item.description} />}
         fetchData={fetchPokemonData}
         itemsPerPage={10}
       />

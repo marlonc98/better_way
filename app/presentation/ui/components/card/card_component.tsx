@@ -4,7 +4,7 @@ import CardComponentProps from "./card_component_props";
 
 const CardComponent: FC<CardComponentProps> = ({ title, description, image, width = "100%", height = 200, }) => {
     return (
-        <View style={{...styles.card, width: width}}>
+        <View style={{...styles.card,}}>
             <Image source={{ uri: image }} style={{...styles.image, height: height}} />
             <View style={styles.textContainer}>
                 <Text style={styles.title}>{title}</Text>
